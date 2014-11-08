@@ -18,8 +18,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -40,6 +38,19 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 #layout
 gem 'haml'
+
+#tools
+gem 'active_model_serializers'
+gem 'awesome_print'
+gem 'browser'
+gem 'decent_exposure', :git => 'git://github.com/voxdolo/decent_exposure.git'
+gem 'fog', "~> 1.3.1"
+gem 'i18n-tasks', '~> 0.2.10'
+gem 'jbuilder', '~> 2.0'
+gem 'json'
+gem 'phony_rails' # validates phones
+gem 'time_diff'
+
 #security
 gem 'devise'
 gem 'attr_encrypted'
