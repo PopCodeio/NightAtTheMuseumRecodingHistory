@@ -23,6 +23,9 @@ gem 'fog', "~> 1.3.1"
 gem 'carrierwave'
 gem 'rmagick'
 
+# omniauth
+gem 'omniauth-facebook'
+
 group :development, :test do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   gem 'byebug'
