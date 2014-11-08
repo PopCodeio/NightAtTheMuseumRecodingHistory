@@ -261,7 +261,6 @@ GEM
     ref (1.0.5)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
-    rmagick (2.13.3)
     robotex (1.0.0)
     rspec-collection_matchers (1.0.0)
       rspec-expectations (>= 2.99.0.beta1)
@@ -387,7 +386,6 @@ DEPENDENCIES
   railroady
   rails (= 4.1.7)
   rails_12factor
-  rmagick
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.0)
   sdoc
