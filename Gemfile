@@ -22,10 +22,10 @@ gem 'simple_form'
 
 group :development, :test do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem 'byebug'
   gem 'capybara'
   gem 'cucumber-rails', :require => false, git: 'https://github.com/cucumber/cucumber-rails.git'
   gem 'database_cleaner'
-  # gem 'debugger' ,'~> 1.6.5'
   gem 'email_spec'
   gem 'factory_girl_rails'
   gem 'foreman'
