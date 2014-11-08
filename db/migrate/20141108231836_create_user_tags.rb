@@ -4,6 +4,10 @@ class CreateUserTags < ActiveRecord::Migration
       t.integer :user_id
       t.integer :tag_id
       t.integer :item_id
+
+      t.boolean :deleted, default: false
+      t.integer :deleted_by
+      t.datetime :deleted_att, default: false
       t.timestamps
     end
   end

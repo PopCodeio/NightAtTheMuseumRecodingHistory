@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(version: 20141108231836) do
     t.integer  "user_id"
     t.integer  "tag_id"
     t.integer  "item_id"
+    t.boolean  "deleted",     default: false
+    t.integer  "deleted_by"
+    t.datetime "deleted_att"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
