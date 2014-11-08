@@ -1,0 +1,11 @@
+- if f.object.errors.any?
+  =# f.error_notification
+  -# How to get error count
+  -# #{pluralize(object.errors.count, tr(:error))}
+  #error_explanation
+    - f.object.errors.full_messages.each do |msg|
+      .lr-alert.alert-danger.alert-dismissable
+        %button{type: "button", class: "close", 'data-dismiss' => "alert", 'aria-hidden' => 'true'}
+          &times;
+        #{msg}
+

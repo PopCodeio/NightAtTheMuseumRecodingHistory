@@ -1,0 +1,11 @@
+.errors
+  - unless flash[:notice].blank?
+    .lr-alert.alert-success
+      = content_tag :div, flash[:notice]
+  - unless flash[:error].blank?
+    .lr-alert.alert-warning
+      = content_tag :div, flash[:error]
+  - unless flash[:alert].blank?
+    .lr-alert.alert-danger
+      = content_tag :div, flash[:alert]
+
