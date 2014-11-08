@@ -82,6 +82,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
@@ -230,6 +235,7 @@ GEM
     ref (1.0.5)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rmagick (2.13.3)
     robotex (1.0.0)
     rspec-collection_matchers (1.0.0)
       rspec-expectations (>= 2.99.0.beta1)
@@ -327,6 +333,7 @@ DEPENDENCIES
   browser
   byebug
   capybara
+  carrierwave
   coffee-rails (~> 4.0.0)
   cucumber-rails!
   database_cleaner
@@ -351,6 +358,7 @@ DEPENDENCIES
   railroady
   rails (= 4.1.7)
   rails_12factor
+  rmagick
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.0)
   sdoc
