@@ -21,7 +21,7 @@ gem 'simple_form'
 # image
 gem 'fog', "~> 1.3.1"
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', :require => 'RMagick'
 
 # omniauth
 gem 'omniauth-facebook'
