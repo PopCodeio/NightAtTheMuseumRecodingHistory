@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108194850) do
+ActiveRecord::Schema.define(version: 20141108231836) do
 
   create_table "items", force: true do |t|
     t.integer  "source_db_id", default: 0,  null: false
@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(version: 20141108194850) do
     t.string   "rights",       default: "", null: false
     t.string   "picture",      default: "", null: false
     t.text     "params"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.boolean  "deleted",     default: false
+    t.integer  "deleted_by"
+    t.datetime "deleted_att"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_tags", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.integer  "item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
