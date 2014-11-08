@@ -2,3 +2,6 @@ en:
   hello: "Hello world"
   brand_name: "Miami Museum "
   brand_tagline: "Recoding History"
+  registration: "registration"
+  log_in: "log in"
+  log_out: "log out"
