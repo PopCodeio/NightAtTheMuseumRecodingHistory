@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108231836) do
+ActiveRecord::Schema.define(version: 20141108235329) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -24,19 +24,31 @@ ActiveRecord::Schema.define(version: 20141108231836) do
   add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id"
   add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id"
 
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "item"
+    t.text     "comment"
+    t.boolean  "deleted",     default: false
+    t.integer  "deleted_by"
+    t.datetime "deleted_att"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "items", force: true do |t|
-    t.integer  "source_db_id", default: 0,  null: false
-    t.string   "title",        default: "", null: false
-    t.string   "date",         default: "", null: false
+    t.integer  "source_db_id",   default: 0,  null: false
+    t.string   "title",          default: "", null: false
+    t.string   "date",           default: "", null: false
     t.date     "source_date"
-    t.string   "description",  default: "", null: false
-    t.string   "source_id",    default: "", null: false
-    t.string   "source",       default: "", null: false
-    t.string   "found",        default: "", null: false
-    t.string   "creator",      default: "", null: false
-    t.string   "subject",      default: "", null: false
-    t.string   "rights",       default: "", null: false
-    t.string   "picture",      default: "", null: false
+    t.string   "description",    default: "", null: false
+    t.string   "source_id",      default: "", null: false
+    t.string   "source",         default: "", null: false
+    t.string   "found",          default: "", null: false
+    t.string   "creator",        default: "", null: false
+    t.string   "subject",        default: "", null: false
+    t.string   "rights",         default: "", null: false
+    t.string   "picture",        default: "", null: false
+    t.datetime "time_line_date"
     t.text     "params"
     t.datetime "created_at"
     t.datetime "updated_at"
