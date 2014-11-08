@@ -13,12 +13,9 @@ gem 'browser'
 gem 'decent_exposure', :git => 'git://github.com/voxdolo/decent_exposure.git'
 gem 'fog', "~> 1.3.1"
 gem 'i18n-tasks', '~> 0.2.10'
-gem 'jbuilder', '~> 2.0'
 gem 'json'
 gem 'phony_rails' # validates phones
 gem 'time_diff'
-
-
 
 group :development, :test do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
