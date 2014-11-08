@@ -55,6 +55,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    ambry (0.3.1)
     anemone (0.7.2)
       nokogiri (>= 1.3.0)
       robotex (>= 1.0.0)
@@ -191,6 +192,8 @@ GEM
     libv8 (3.16.14.7)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    merit (2.2.0)
+      ambry (~> 0.3.0)
     mime-types (2.4.3)
     mini_exiftool (2.4.2)
     minitest (5.4.2)
@@ -374,6 +377,7 @@ DEPENDENCIES
   json
   launchy
   letter_opener
+  merit
   mini_exiftool
   nokogiri
   omniauth-facebook

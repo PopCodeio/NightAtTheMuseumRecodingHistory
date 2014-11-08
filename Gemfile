@@ -6,6 +6,7 @@ gem 'rails', '4.1.7'
 gem 'devise' # User Authentication
 gem 'thin' # Use Thin as Server
 gem 'tzinfo-data', platforms: [:mingw, :mswin] # Rails Core Windows Dependency, Provides Time Zone Info
+
 #tools
 gem 'active_model_serializers'
 gem 'awesome_print'
@@ -18,6 +19,8 @@ gem 'time_diff'
 gem 'anemone'
 gem 'nokogiri'
 gem 'simple_form'
+gem 'merit'
+
 # image
 gem 'fog', "~> 1.3.1"
 gem 'carrierwave'
