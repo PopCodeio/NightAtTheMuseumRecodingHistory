@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'fog', "~> 1.3.1"
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
+gem 'mini_exiftool'
 
 # omniauth
 gem 'omniauth-facebook'

@@ -192,6 +192,7 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
+    mini_exiftool (2.4.2)
     minitest (5.4.2)
     multi_json (1.10.1)
     multi_test (0.1.1)
@@ -373,6 +374,7 @@ DEPENDENCIES
   json
   launchy
   letter_opener
+  mini_exiftool
   nokogiri
   omniauth-facebook
   pg
