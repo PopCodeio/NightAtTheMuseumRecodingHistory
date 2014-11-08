@@ -38,6 +38,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+#layout
+gem 'haml'
+#security
+gem 'devise'
+gem 'attr_encrypted'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

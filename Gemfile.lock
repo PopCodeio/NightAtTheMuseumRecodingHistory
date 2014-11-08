@@ -48,6 +48,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    attr_encrypted (1.3.3)
+      encryptor (>= 1.3.0)
+    bcrypt (3.1.9)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -86,6 +89,13 @@ GEM
       debugger-ruby_core_source (~> 1.3.5)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.3.5)
+    devise (3.4.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
@@ -93,6 +103,7 @@ GEM
     email_spec (1.6.0)
       launchy (~> 2.1)
       mail (~> 2.2)
+    encryptor (1.3.0)
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -110,6 +121,8 @@ GEM
       multi_json (~> 1.3)
     gherkin (2.12.2-x86-mingw32)
       multi_json (~> 1.3)
+    haml (4.0.5)
+      tilt
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.4)
@@ -135,6 +148,7 @@ GEM
       mini_portile (~> 0.6.0)
     nokogiri (1.6.4.1-x86-mingw32)
       mini_portile (~> 0.6.0)
+    orm_adapter (0.5.0)
     populator (1.0.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -169,6 +183,8 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    responders (1.1.1)
+      railties (>= 3.2, < 4.2)
     rspec-collection_matchers (1.0.0)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (2.99.2)
@@ -223,6 +239,8 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     watir-webdriver (0.6.11)
       selenium-webdriver (>= 2.18.0)
     websocket (1.2.1)
@@ -236,6 +254,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate!
+  attr_encrypted
   better_errors
   binding_of_caller
   capybara
@@ -243,10 +262,12 @@ DEPENDENCIES
   cucumber-rails!
   database_cleaner
   debugger (~> 1.6.5)
+  devise
   email_spec
   factory_girl_rails
   foreman
   gem-open
+  haml
   jbuilder (~> 2.0)
   jquery-rails
   launchy
