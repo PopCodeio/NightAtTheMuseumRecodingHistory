@@ -18,6 +18,7 @@ gem 'phony_rails' # validates phones
 gem 'time_diff'
 gem 'anemone'
 gem 'nokogiri'
+gem 'simple_form'
 
 group :development, :test do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
