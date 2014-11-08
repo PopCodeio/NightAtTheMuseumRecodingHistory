@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108231651) do
+ActiveRecord::Schema.define(version: 20141108231836) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -42,13 +42,6 @@ ActiveRecord::Schema.define(version: 20141108231651) do
     t.datetime "updated_at"
   end
 
-  create_table "tags", force: true do |t|
-    t.string   "name"
-    t.boolean  "deleted",     default: false
-    t.integer  "deleted_by"
-    t.datetime "deleted_att"
-  end
-
   create_table "merit_actions", force: true do |t|
     t.integer  "user_id"
     t.string   "action_method"
@@ -60,15 +53,6 @@ ActiveRecord::Schema.define(version: 20141108231651) do
     t.boolean  "processed",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "user_tags", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "tag_id"
-    t.integer  "item_id"
-    t.boolean  "deleted",     default: false
-    t.integer  "deleted_by"
-    t.datetime "deleted_att"
   end
 
   create_table "merit_activity_logs", force: true do |t|
@@ -92,6 +76,26 @@ ActiveRecord::Schema.define(version: 20141108231651) do
   end
 
   create_table "sashes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.boolean  "deleted",     default: false
+    t.integer  "deleted_by"
+    t.datetime "deleted_att"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_tags", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.integer  "item_id"
+    t.boolean  "deleted",     default: false
+    t.integer  "deleted_by"
+    t.datetime "deleted_att"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
