@@ -33,7 +33,33 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+#gem 'debugger', group: [:development, :test]
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'gem-open'
+  gem 'railroady'
+end
+
+
+group :development, :test do
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+  gem 'capybara'
+  gem 'cucumber-rails', :require => false, git: 'https://github.com/cucumber/cucumber-rails.git'
+  gem 'database_cleaner'
+  gem 'debugger' ,'~> 1.6.5'
+  gem 'email_spec'
+  gem 'factory_girl_rails'
+  gem 'foreman'
+  gem 'launchy'
+  gem 'letter_opener'
+  gem 'populator'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'selenium-webdriver'
+  gem 'watir-webdriver'
+end
