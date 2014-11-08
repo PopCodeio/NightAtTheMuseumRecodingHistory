@@ -12,4 +12,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    - if current_user
+      = link_to tr(:log_out), destroy_user_session_path, :method => :delete
+    - else
+      = link_to tr(:log_in), new_user_session_path
+      = link_to tr(:registration), new_user_registration_path
+
     = yield
