@@ -3,10 +3,21 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 
-# gem 'recurrence'
 gem 'devise' # User Authentication
 gem 'thin' # Use Thin as Server
 gem 'tzinfo-data', platforms: [:mingw, :mswin] # Rails Core Windows Dependency, Provides Time Zone Info
+#tools
+gem 'active_model_serializers'
+gem 'awesome_print'
+gem 'browser'
+gem 'decent_exposure', :git => 'git://github.com/voxdolo/decent_exposure.git'
+gem 'fog', "~> 1.3.1"
+gem 'i18n-tasks', '~> 0.2.10'
+gem 'jbuilder', '~> 2.0'
+gem 'json'
+gem 'phony_rails' # validates phones
+gem 'time_diff'
+
 
 
 group :development, :test do
