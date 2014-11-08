@@ -32,7 +32,6 @@ group :development, :test do
   gem 'launchy'
   gem 'letter_opener'
   gem 'populator'
-  gem 'pry-rails'
   gem 'rspec-rails', '~> 2.0'
   gem 'selenium-webdriver'
   gem 'watir-webdriver'
