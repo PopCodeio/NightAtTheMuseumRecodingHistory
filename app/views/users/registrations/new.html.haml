@@ -22,8 +22,8 @@
         = f.hidden_field :last_name, :value => auth.last_name
         = f.hidden_field :birthday, :value => auth.birthday
         = f.hidden_field :gender, :value => auth.gender
-      = f.input :email, label: false, error: false, input_html: { class: 'lr-input', placeholder: tr(:email).to_s.titleize }
-      = f.input :password, label: false, error: false, input_html: { class: 'lr-input', placeholder: tr(:password).to_s.titleize }
+      = f.input :email, label: false, error: false, input_html: { class: 'lr-input', placeholder: tr(:email).to_s.titleize, size: '100' }
+      = f.input :password, label: false, error: false, input_html: { class: 'lr-input', placeholder: tr(:password).to_s.titleize, size: '100' }
       -#= f.input :newsletter, input_html: {class: 'lr-label'}
       .platter-split
         = button_tag tr(:sign_up).to_s.titleize, :class => 'lr-btn btn-block'

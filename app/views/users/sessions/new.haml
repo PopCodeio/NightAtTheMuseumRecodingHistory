@@ -12,9 +12,9 @@
       = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
         = render 'shared/simple_form_errors', f: f
         .form-group
-          = f.input :email, label: false, input_html: { class: 'lr-input', placeholder: tr(:email).to_s.titleize}
+          = f.input :email, label: false, input_html: { class: 'lr-input', placeholder: tr(:email).to_s.titleize, size: '100' }
         .form-group
-          = f.input :password, label: false, input_html: { class: 'lr-input', placeholder: tr(:password).to_s.titleize }
+          = f.input :password, label: false, input_html: { class: 'lr-input', placeholder: tr(:password).to_s.titleize, size: '100' }
         .form-group
           .platter-split
             = button_tag tr(:login).to_s.titleize, :class => 'lr-btn btn-block'
