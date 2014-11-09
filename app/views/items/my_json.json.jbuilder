@@ -10,7 +10,7 @@ json.timeline do items
   end
   json.date(items) do |item|
     json.headline '<a href="/items/'+item.id.to_s+'">'+item.title+'</a>'
-    json.startDate item.time_line_date.strftime("%Y")
+    json.startDate item.time_line_date
     json.text item.description
     json.asset do
       json.media item.picture_url

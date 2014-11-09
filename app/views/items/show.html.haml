@@ -34,14 +34,13 @@
         %strong Rights:
         = item.rights
     .row
-      %h1 Tag
-    .row
-      %div
-        .tagsinput
-          - item.tags.uniq.each do |t|
-            %span.tag
-              = t.name + ' : '
-              = t.tag_count(item: item.id).to_s 
+      %h2
+        Tags
+      .tagsinput
+        - item.tags.uniq.each do |t|
+          %span.tag
+            = t.name + ' : '
+            = t.tag_count(item: item.id).to_s 
     .row
       - if current_user
         .form-group
