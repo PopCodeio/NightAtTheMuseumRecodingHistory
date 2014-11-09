@@ -7,6 +7,15 @@ class Users::ProfileController < UserController
       sign_in(current_user, :bypass => true)
       flash[:notice] = t(:profile_was_successfully_updated)
       redirect_to root_path
+      add_badge = true
+      current_user.badges.each do |b|
+        if b.id == 2
+          add_badge = false
+        end
+      end
+      if add_badge
+        current_user.add_badge(2)
+      end
     else
       render :edit
     end
