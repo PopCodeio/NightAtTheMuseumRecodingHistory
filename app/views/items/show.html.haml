@@ -43,12 +43,13 @@
               = t.name + ' : '
               = t.tag_count(item: item.id).to_s 
     .row
-      .form-group
-        = form_tag :photo_tags, method: 'puts', id:'playform' do
-          #tags
-          = hidden_field_tag :item, item.id
-          = hidden_field_tag :from_page, 'items'
-          = submit_tag 'submit'
+      - if current_user
+        .form-group
+          = form_tag :photo_tags, method: 'puts', id:'playform' do
+            #tags
+            = hidden_field_tag :item, item.id
+            = hidden_field_tag :from_page, 'items'
+            = submit_tag 'submit'
 :css
   div.tagsinput { border:1px solid #CCC; background: #FFF; padding:5px; width:300px; height:100px; overflow-y: auto;}
   div.tagsinput span.tag { border: 1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; display: block; float: left; padding: 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
