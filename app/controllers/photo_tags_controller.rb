@@ -1,6 +1,6 @@
 class PhotoTagsController < PublicController
   before_action :set_item, :set_tag, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
 
   expose(:item){ Item.all.shuffle.last }
 
