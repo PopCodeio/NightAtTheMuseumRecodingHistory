@@ -41,14 +41,16 @@
             %ul.nav.navbar-nav.navbar-right
               - if current_user
                 %li
-                  = link_to 'Play Tag', photo_tags_path
+                  = link_to tr(:play_tag).titleize, photo_tags_path
                 %li
-                  = link_to t(:log_out).titleize, destroy_user_session_path, :method => :delete
+                  = link_to tr(:profile).titleize, edit_users_profile_path(current_user)
+                %li
+                  = link_to tr(:log_out).titleize, destroy_user_session_path, :method => :delete
               - else
                 %li
-                  = link_to t(:log_in).titleize, new_user_session_path
+                  = link_to tr(:log_in).titleize, new_user_session_path
                 %li
-                  = link_to t(:registration).titleize, new_user_registration_path
+                  = link_to tr(:registration).titleize, new_user_registration_path
     = yield
     %footer.footer
       .container

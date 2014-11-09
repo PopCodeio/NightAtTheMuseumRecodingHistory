@@ -1,0 +1,19 @@
+#profile
+  .container
+    .row
+      .col-md-12
+        %h4.innerAll.margin-none.bg-white= t(:edit).to_s + ' ' + t(:profile).to_s
+        = simple_form_for(user, :url => users_profile_path(user), html: {class: 'form-horizontal clearfix', novalidate: true}) do |f|
+          = f.input :first_name, input_html: { class: 'form-control' }
+          = f.input :last_name, input_html: { class: 'form-control' }
+          = f.input :address, input_html: { class: 'form-control' }
+          = f.input :city, input_html: { class: 'form-control' }
+          = f.input :state, input_html: { class: 'form-control' }
+          = f.input :zip_code, input_html: { class: 'form-control' }
+          = f.input :time_zone, input_html: { class: 'form-control' }
+          = f.input :phone, input_html: { class: 'form-control' }
+          = f.input :language, input_html: { class: 'form-control' }
+          = f.input :photo, input_html: { class: 'form-control' }
+          = f.input :password, input_html: { class: 'form-control' }
+          = f.input :password_confirmation, input_html: { class: 'form-control' }
+          = f.button :submit, class: 'btn btn-primary btn-large', disable_with: 'Creating...'

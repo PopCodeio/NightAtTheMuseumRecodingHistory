@@ -1,36 +1,19 @@
 #register
-.platter
-  .platter-top
-
-  .platter-middle
-    .form-inline.text-center
-      .form-group
-        -# unless auth
-          %h1= tr(:sign_up)
-      .form-group.social-icon-group
-        -# unless auth
-          = link_to tr(:facebook_login), user_omniauth_authorize_url(:facebook), class: 'fb social-icon'
-          = link_to tr(:twitter_login), user_omniauth_authorize_path(:twitter), class: 'twitter social-icon'
-          = link_to tr(:gmail_login), user_omniauth_authorize_path(:google_oauth2), class: 'gplus social-icon '
-  .platter-middle
-    = render 'shared/alerts'
-  .platter-middle
-    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-      = render 'shared/simple_form_errors', f: f
-      -# if auth
-        = f.hidden_field :first_name, :value => auth.first_name
-        = f.hidden_field :last_name, :value => auth.last_name
-        = f.hidden_field :birthday, :value => auth.birthday
-        = f.hidden_field :gender, :value => auth.gender
-      = f.input :email, label: false, error: false, input_html: { class: 'lr-input', placeholder: tr(:email).to_s.titleize, size: '100' }
-      = f.input :password, label: false, error: false, input_html: { class: 'lr-input', placeholder: tr(:password).to_s.titleize, size: '100' }
-      -#= f.input :newsletter, input_html: {class: 'lr-label'}
-      .platter-split
-        = button_tag tr(:sign_up).to_s.titleize, :class => 'lr-btn btn-block'
-      .platter-split
-        %label.checkbox
-          = f.input  :remember_me, :as => :boolean, input_html: { class: 'lr-label', :checked => "checked"}, :inline_label => tr(:remember_me).to_s.titleize if devise_mapping.rememberable?
-  .platter-bottom
-    = link_to tr(:sign_in), new_user_session_path, class: 'btn text-center'
+  .container
+    .col-lg-4
+      .platter-middle
+        = render 'shared/alerts'
+      .platter-middle
+        = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+          = render 'shared/simple_form_errors', f: f
+          = f.input :email, label: false, error: false, input_html: { class: 'form-control', placeholder: tr(:email).to_s.titleize, size: '100' }
+          = f.input :password, label: false, error: false, input_html: { class: 'form-control', placeholder: tr(:password).to_s.titleize, size: '100' }
+          -#= f.input :newsletter, input_html: {class: 'lr-label'}
+          .platter-split
+            = button_tag tr(:sign_up).to_s.titleize, :class => 'lr-btn btn-block'
+          .platter-split
+            %label.checkbox
+              = f.input  :remember_me, :as => :boolean, input_html: { class: 'lr-label', :checked => "checked"}, :inline_label => tr(:remember_me).to_s.titleize if devise_mapping.rememberable?
+        = link_to tr(:log_in), new_user_session_path, class: 'btn btn-default btn-block'
 
 
