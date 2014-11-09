@@ -16,7 +16,7 @@
         %strong Description:
         = item.description
         %br
-        %strong Source_id:
+        %strong Id:
         = item.source_id
         %br
         %strong Source:
@@ -34,10 +34,12 @@
         %strong Rights:
         = item.rights
     .row
-
+      %h1 Tag
       .form-group
         = form_tag :photo_tags, method: 'puts', id:'playform' do
           #tags
           = hidden_field_tag :item, 1
           = submit_tag 'submit'
-
+    .row
+      - item.tags.each do |t|
+        = t.name
