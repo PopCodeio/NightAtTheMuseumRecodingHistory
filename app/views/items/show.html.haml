@@ -1,11 +1,14 @@
 #phototags
   .container
     .row
-      .col-md-4.pull-left
+      .col-md-4.col-lg-4
         - if item.picture_url.to_s.empty? 
           %img{src:'http://placehold.it/500x300', class:'img-thumbnail'}
         - else
           = image_tag item.picture_url, class:'img-thumbnail'
+          .text-center
+            = item.subject
+
         .tagsinput
           %span.tag
             = link_to item_path(item.id) do
@@ -18,35 +21,34 @@
               test
               = t.name + ' : '
               = t.tag_count(item: item.id).to_s
-      .row
-        .col-md-8.pull-right.digcontentmetadata
-          %strong Title:
-          = item.title
-          %br
+      .col-md-8.col-lg-8.digcontentmetadata
+        %h2= item.title
+
+        %p 
           %strong Date:
           = item.date
-          %br
+        %p 
           %strong Description:
+        %p 
           = item.description
-          %br
+        %p 
           %strong Id:
           = item.source_id
-          %br
+        %p 
           %strong Source:
           = item.source
-          %br
+        %p 
           %strong Found:
           = item.found
-          %br
+        %p 
           %strong Creator:
           = item.creator
-          %br
+        %p 
           %strong Subject:
           = item.subject
-          %br
+        %p 
           %strong Rights:
           = item.rights
-        .col-md-8.pull-right
     .row
       - if current_user
         .form-group
