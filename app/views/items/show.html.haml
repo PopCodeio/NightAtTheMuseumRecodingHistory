@@ -50,11 +50,11 @@
     .row
       - if current_user
         .form-group
-          = form_tag :photo_tags, method: 'puts', id:'playform' do
+          = form_tag :photo_tags, method: 'puts', id:'playform', class: 'pull-left' do
             #tags
             = hidden_field_tag :item, item.id
             = hidden_field_tag :from_page, 'items'
-            = submit_tag 'submit'
+            = submit_tag 'submit', class: ' btn btn-primary pull-right'
     .row
       - comments.each do |c|
         .media.block
