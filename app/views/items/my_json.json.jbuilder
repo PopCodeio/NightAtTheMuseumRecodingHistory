@@ -9,8 +9,8 @@ json.timeline do items
     json.caption ''
   end
   json.date(items) do |item|
-    json.headline '<a href="http://www.google.com">'+item.title+'</a>'
-    json.startDate item.time_line_date.strftime("%D")
+    json.headline '<a href="/items/'+item.id.to_s+'">'+item.title+'</a>'
+    json.startDate item.time_line_date.strftime("%Y")
     json.text item.description
     json.asset do
       json.media item.picture_url
