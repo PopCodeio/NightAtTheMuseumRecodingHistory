@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108235329) do
+ActiveRecord::Schema.define(version: 20141109164417) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -36,18 +36,18 @@ ActiveRecord::Schema.define(version: 20141108235329) do
   end
 
   create_table "items", force: true do |t|
-    t.integer  "source_db_id",   default: 0,  null: false
-    t.string   "title",          default: "", null: false
-    t.string   "date",           default: "", null: false
+    t.integer  "source_db_id",               default: 0,  null: false
+    t.string   "title",                      default: "", null: false
+    t.string   "date",                       default: "", null: false
     t.date     "source_date"
-    t.string   "description",    default: "", null: false
-    t.string   "source_id",      default: "", null: false
-    t.string   "source",         default: "", null: false
-    t.string   "found",          default: "", null: false
-    t.string   "creator",        default: "", null: false
-    t.string   "subject",        default: "", null: false
-    t.string   "rights",         default: "", null: false
-    t.string   "picture",        default: "", null: false
+    t.text     "description",    limit: 255, default: "", null: false
+    t.string   "source_id",                  default: "", null: false
+    t.string   "source",                     default: "", null: false
+    t.string   "found",                      default: "", null: false
+    t.string   "creator",                    default: "", null: false
+    t.string   "subject",                    default: "", null: false
+    t.string   "rights",                     default: "", null: false
+    t.string   "picture",                    default: "", null: false
     t.datetime "time_line_date"
     t.text     "params"
     t.datetime "created_at"
