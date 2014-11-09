@@ -45,19 +45,7 @@ p a:hover {
   transition: all 0.25s;
 }
 
-/* line 39, ../../../sass/projects/taggle/taggle.scss */
-.btn {
-  background: #990033;
-  padding: 12px 30px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin-right: 10px;
-  color: white !important;
-  position: relative;
-  display: inline-block;
-  width: 130px;
-}
+
 /* line 49, ../../../sass/projects/taggle/taggle.scss */
 .btn:hover {
   background: #cc0044;

@@ -59,10 +59,16 @@
       - comments.each do |c|
         .media.block
           %a.media-left{:href => "#"}
-            = image_tag ['avatars/avatar_10937.jpg', 'avatars/avatar_11212.jpg', 'avatars/paigecopy.jpg', 'avatars/SonictheHedgehog4276.gif'].sample
+            - if c.user.photo_url.to_s.empty?
+              = image_tag ['avatars/avatar_10937.jpg', 'avatars/avatar_11212.jpg', 'avatars/paigecopy.jpg', 'avatars/SonictheHedgehog4276.gif'].sample
+            - else
+              = image_tag c.user.photo_url
           .media-body
             %h4.media-heading
-              = ['Aldo', 'Moe', 'Chris', 'Marci', 'Mari', 'Rebecca'].sample
+              - if c.user.name.to_s.empty?
+                = ['Aldo', 'Moe', 'Chris', 'Marci', 'Mari', 'Rebecca'].sample
+              - else
+                = c.user.name
             .block= c.comment
             %br
             .small.pull-left= c.created_at.strftime('%D')
