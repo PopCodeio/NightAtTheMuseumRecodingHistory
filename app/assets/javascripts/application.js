@@ -14,4 +14,13 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require taggle
+
 Turbolinks.enableProgressBar();
+
+$(document).on('ready page:load', function(){
+    console.log('ready');
+ tags = new Taggle('tags');
+})
+
+

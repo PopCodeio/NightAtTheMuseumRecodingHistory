@@ -15,7 +15,14 @@
   .container
     .row
       .text-center
-        %img{src:'http://placehold.it/500x300', class:'img-thumbnail'}
+        - if item.picture_url.to_s.empty? 
+          %img{src:'http://placehold.it/500x300', class:'img-thumbnail'}
+        - else
+        = image_tag item.picture_url
     .row
+
       .form-group
-        = text_area_tag :tags, 'Tags Here', class: 'form-control'
+        = form_tag :photo_tags, method: 'puts', id:'playform' do
+          #tags
+          = hidden_field_tag :item, 1
+          = submit_tag 'submit'
