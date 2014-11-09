@@ -14,7 +14,11 @@ class PhotoTagsController < PublicController
       ut = UserTag.find_or_initialize_by(user_id: current_user.id, tag_id: tag.id, item_id: item.id )
       ut.save
     end
-    redirect_to photo_tags_path
+    if params[:from_page] == 'items'
+      redirect_to item_path(item)
+    else
+      redirect_to photo_tags_path
+    end
   end
 
   private
