@@ -1,3 +1,4 @@
 class PagesController < PublicController
+
 end
 

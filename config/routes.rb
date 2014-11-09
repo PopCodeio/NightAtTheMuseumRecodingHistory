@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
   match 'ping'         => 'pages#ping',           as: :ping, via: :all
 
+  resources :items
   root 'pages#index'
 end

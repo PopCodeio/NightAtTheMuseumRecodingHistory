@@ -11,7 +11,7 @@ namespace :pull do
 
     1..1000.times do |t|
       #num = t+1
-      num = t+180
+      num = t+374
 
       File.open('public/pictures/' + num.to_s + '.jpg', 'wb') do |fo|
         fo.write open(picture + '&id=' + num.to_s).read
@@ -46,9 +46,12 @@ namespace :pull do
             item.time_line_date   = DateTime.parse(date)
           elsif date.length == 8
             mydate = date
-            date = mydate.at(0..3) + '-' + mydate.at(6..7) + '-' + mydate.at(5..6)
+            date = mydate.at(0..3) + '-' + mydate.at(6..7) + '-' + mydate.at(4..5)
             item.time_line_date   = DateTime.parse(date)
           else
+            date = item.source_id.at(0..3)
+            date =  date + '-'+ (rand(11)+1).to_s + '-' + (rand(27)+1).to_s
+            item.time_line_date   = DateTime.parse(date)
             #debugger
           end
           #puts item.date.to_s + ' Cant convert to date'
