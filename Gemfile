@@ -24,7 +24,7 @@ gem 'merit'
 # image
 gem 'fog', "~> 1.3.1"
 gem 'carrierwave'
-gem 'rmagick', :require => 'RMagick'
+# gem 'rmagick', :require => 'RMagick'
 gem 'mini_exiftool'
 
 # omniauth
