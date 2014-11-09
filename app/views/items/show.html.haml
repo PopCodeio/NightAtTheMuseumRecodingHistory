@@ -50,9 +50,9 @@
             = hidden_field_tag :item, item.id
             = hidden_field_tag :from_page, 'items'
             = submit_tag 'submit'
-    .row.img-thumbnail
+    .row
       - comments.each do |c|
-        .media
+        .media.block
           %a.media-left{:href => "#"}
             = image_tag ['avatars/avatar_10937.jpg', 'avatars/avatar_11212.jpg', 'avatars/paigecopy.jpg', 'avatars/SonictheHedgehog4276.gif'].sample
           .media-body
