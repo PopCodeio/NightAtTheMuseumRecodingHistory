@@ -43,6 +43,19 @@ badge_id = 0
   description: ''
 }, {
   id: (badge_id = badge_id+1),
+  name: 'explorer',
+  description: ''
+}, {
+  id: (badge_id = badge_id+1),
+  name: 'curator',
+  description: ''
+}, {
+  id: (badge_id = badge_id+1),
+  name: 'chief_curator',
+  description: ''
+},
+{
+  id: (badge_id = badge_id+1),
   name: 'archaeologist',
   description: ''
 }].each do |attrs|
