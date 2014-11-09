@@ -34,7 +34,7 @@
                 - if current_user
                   = link_to users_profile_path(current_user) do
                     %li
-                      = current_user.name
+                      = current_user.name == ' ' ? current_user.email : current_user.name
                       = current_user.badges.count
 
       %nav.navbar.navbar-default{:role => "navigation"}
