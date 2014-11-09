@@ -3,18 +3,19 @@
   .container
     .row
       .text-center
-        - if item.picture_url.to_s.empty? 
+        - if item.picture_url.to_s == ""
           %img{src:'http://placehold.it/500x300', class:'img-thumbnail'}
         - else
           = image_tag item.picture_url, class:'img-thumbnail'
     %br
     .row
-      - if current_user
-        .form-group
-          = form_tag :photo_tags, method: 'puts', id:'playform' do
-            #tags
-            = hidden_field_tag :item, item.id
-            = submit_tag 'submit'
+      .col-lg-8.col-lg-push-2
+        - if current_user
+          .form-group
+            = form_tag :photo_tags, method: 'puts', id:'playform' do
+              #tags
+              = hidden_field_tag :item, item.id
+              = submit_tag 'submit', class:'btn btn-success btn-lg'
 
 :javascript
       tags = new Taggle('tags');
