@@ -58,23 +58,19 @@
               %li
                 = link_to t(:registration).titleize, new_user_registration_path
     = yield
-    %footer.bs-docs-footer
-      #footer_container
-        #footer
-          %p#footer_address
+    %footer.footer
+      .container
+        .row
+          .col-lg-4
+            %p#footer_address
             HistoryMiami
-            %br/
             101 West Flagler Street
-            %br/
             Miami, FL 33130
-          %p#footer_contact
-            %br/
+            %p#footer_contact
             305-375-1492
-            %br/
             %a{:href => "mailto:e.info@historymiami.org"} e.info@historymiami.org
-          #footer_social
-            Social Media
-            %br/
+          .col-lg-4
+            %p.text-center Social Media
             %a{:href => "http://www.facebook.com/historymiami360", :target => "blank"}
               %img{:alt => "HistoryMiami on Facebook", :src => "http://www.historymiami.org/images/facebook.png"}/
             %a{:href => "http://www.twitter.com/historymiami", :target => "blank"}
@@ -87,7 +83,8 @@
               %img{:alt => "HistoryMiami on Foursquare", :src => "http://www.historymiami.org/images/foursquare.png"}/
             %a{:href => "http://www.tripadvisor.com/Attraction_Review-g34438-d592101-Reviews-HistoryMiami-Miami_Florida.html", :target => "_blank"}
               %img{:alt => "HistoryMiami on Trip Advisor", :src => "http://www.historymiami.org/images/trip-advisor.jpg"}/
-          #footer_smithsonian
+          .col-lg-4
+            #footer_smithsonian
             %span Smithsonian Institution Affiliations Program
           #footer_row
             %p#footer_copyright ©HistoryMiami. All rights reserved.

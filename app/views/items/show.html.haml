@@ -38,7 +38,7 @@
     .row
       %div
         .tagsinput
-          - item.tags.each do |t|
+          - item.tags.uniq.each do |t|
             %span.tag
               = t.name + ' : '
               = t.tag_count(item: item.id).to_s 
