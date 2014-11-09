@@ -2,14 +2,21 @@
 #phototag
   .container
     .row
-      .text-center
-        - if item.picture_url.to_s == ""
-          %img{src:'http://placehold.it/500x300', class:'img-thumbnail'}
-        - else
-          = image_tag item.picture_url, class:'img-thumbnail'
+      .col-md-6.col-lg-6
+        .row
+          .clock
+        .row
+          %p
+            Help, us Chronicle Miami and add as many tags as you can in 90 seconds.
+      .col-md-6.col-lg-6
+        .text-center
+          - if item.picture_url.to_s == ""
+            %img{src:'http://placehold.it/500x300', class:'img-thumbnail'}
+          - else
+            = image_tag item.picture_url, class:'img-thumbnail'
     %br
     .row
-      .col-lg-8.col-lg-push-2
+      .col-lg-6.col-lg-push-3
         - if current_user
           .form-group
             = form_tag :photo_tags, method: 'puts', id:'playform' do
@@ -18,4 +25,14 @@
               = submit_tag 'submit', class:'btn btn-success btn-lg'
 
 :javascript
-      tags = new Taggle('tags');
+  tags = new Taggle('tags');
+
+  $(document).on('ready page:load', function(){
+
+    var clock = $('.clock').FlipClock(15, {
+      clockFace: 'MinuteCounter',
+      countdown: true,
+      stop: function(){ window.location.reload()} 
+    })
+
+  })
