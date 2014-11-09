@@ -15,12 +15,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require taggle
+//= require storyjs-embed
 
 Turbolinks.enableProgressBar();
 
 $(document).on('ready page:load', function(){
     console.log('ready');
- tags = new Taggle('tags');
+    if($('#tags').lenght > 1){
+        tags = new Taggle('tags');}
 })
-
-

@@ -12,7 +12,6 @@
     %meta{ 'http-equiv' => "X-UA-Compatible", content:"IE=edge"}
     %meta{ name: 'viewport', content: "width=device-width, initial-scale=1"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     %nav.navbar.navbar-history{:role => "navigation"}
@@ -27,7 +26,6 @@
             .historymiamilogo
               History
               %span Miami
-            
         #navbar-collapse.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
             - if current_user
@@ -102,3 +100,5 @@
                 %a{:href => "http://www.historymiami.org/sign-up-for-news/", :target => "_blank"} Sign Up For News
               %li
                 %a{:href => "http://www.historymiami.org/about-us/contact-us/"} Contact Us
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
