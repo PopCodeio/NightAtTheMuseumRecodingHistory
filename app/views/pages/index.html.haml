@@ -1,3 +1,13 @@
 #home
 # current_user.badges
 .lead A Link to the past
+=# current_user.badges
+#timeline-embed
+:javascript
+  var timeline_config = {
+   width: "100%",
+   height: "100%",
+   source: 'examples/example_json.json',
+   font:  'SansitaOne-Kameron'
+  }
+%script{:src => "http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js", :type => "text/javascript"}
