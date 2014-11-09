@@ -16,7 +16,7 @@ Merit.setup do |config|
   # Define :current_user_method. Similar to previous option. It will be used
   # to retrieve :user_model_name object if no `:to` option is given. Default
   # is "current_#{user_model_name.downcase}".
-  # config.current_user_method = 'current_user'
+  config.current_user_method = 'current_user'
 end
 
 # Create application badges (uses https://github.com/norman/ambry)
