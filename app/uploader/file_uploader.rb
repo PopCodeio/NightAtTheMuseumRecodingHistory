@@ -20,7 +20,7 @@ class FileUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  version :p50x50 do
-    process :resize_and_pad => [50,50]
-  end
+# version :p50x50 do
+#   process :resize_and_pad => [50,50]
+# end
 end

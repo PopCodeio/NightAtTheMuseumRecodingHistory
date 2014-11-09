@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     namespace :users do
     end
   end
-  match 'ping'         => 'pages#ping',           as: :ping, via: :all
-
   resources :photo_tags
+  match '/items/my_json'  => 'items#my_json', as: :items_json, via: :all
   resources :items
+  match 'ping' => 'pages#ping', as: :ping, via: :all
   root 'pages#index'
 end

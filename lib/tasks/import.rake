@@ -6,20 +6,16 @@ require 'date'
 namespace :pull do
   desc 'test'
   task :images => :environment do
-    target = 'http://historymiamiarchives.org/guides/?p=digitallibrary/digitalcontent'
-    picture = 'http://historymiamiarchives.org/guides/index.php?p=digitallibrary/getfile&preview=long'
+    base = 'http://historymiamiarchives.org/guides/'
+    target = '?p=digitallibrary/digitalcontent'
 
     1..1000.times do |t|
-      #num = t+1
-      num = t+374
+      num = t+1
+      #num = t+423
 
-      File.open('public/pictures/' + num.to_s + '.jpg', 'wb') do |fo|
-        fo.write open(picture + '&id=' + num.to_s).read
-      end
+      doc = Nokogiri::HTML(open(base + target +'&id='+ num.to_s))
+      puts base + target  +'&id='+ num.to_s
 
-      doc = Nokogiri::HTML(open(target +'&id='+ num.to_s))
-      puts target  +'&id='+ num.to_s
-      puts picture +'&id='+ num.to_s
       if doc.css('div.digcontentdata')[0]
         item = Item.find_or_initialize_by(id: num)
         item.source_db_id     = num
@@ -49,23 +45,49 @@ namespace :pull do
             date = mydate.at(0..3) + '-' + mydate.at(6..7) + '-' + mydate.at(4..5)
             item.time_line_date   = DateTime.parse(date)
           else
-            date = item.source_id.at(0..3)
-            date =  date + '-'+ (rand(11)+1).to_s + '-' + (rand(27)+1).to_s
-            item.time_line_date   = DateTime.parse(date)
+            if item.source_id.at(0..3).gsub(/\D/,'').length == 4
+              date = item.source_id.at(0..3)
+              date =  date + '-'+ (rand(11)+1).to_s + '-' + (rand(27)+1).to_s
+              item.time_line_date   = DateTime.parse(date)
+            end
             #debugger
           end
           #puts item.date.to_s + ' Cant convert to date'
         end
-        image = 'public/pictures/' + num.to_s + '.jpg'
-        photo = MiniExiftool.new image
-        photo.title       = item[:title] || ''
-        photo.description = item[:description] || ''
-        photo.save
 
-        #item.remote_picture_path = "#{Rails.root}/public/pictures/" + num.to_s + ".jpg"
-        item[:picture]          = num.to_s + '.png'
+        if doc.at_css('img.digcontentfile')
+          image_id = doc.at_css('img.digcontentfile')['src'].split('&')[1].split('=').last
+          File.open('public/pictures/' + image_id + '.jpg', 'wb') do |fo|
+            picture = base + doc.at_css('img.digcontentfile')['src']
+            fo.write open(picture).read
+
+            image = 'public/pictures/' + image_id + '.jpg'
+            photo = MiniExiftool.new image
+            photo.title       = item[:title] || ''
+            photo.description = item[:description] || ''
+            photo.save
+          end
+        end
+
+        #item.remote_picture_url = picture + '&id=' + num.to_s
+        #item.remote_picture_url = "http://127.0.0.1:3000/pictures/" + num.to_s + ".jpg"
+        # item.remote_picture_path = "#{Rails.root}/public/pictures/" + num.to_s + ".jpg"
+        #item[:picture]          = num.to_s + '.jpg'
         item[:params]           = doc.css('div.digcontentdata').to_json
-        item.save
+        unless item.save
+          item.errors.each do |e|
+            puts e
+          end
+        else
+          src = File.join(Rails.root, "/public/pictures/" + image_id + ".jpg")
+          src_file = File.new(src)
+          item.picture = src_file
+          if item.save
+            puts 'Image ' + item.id.to_s +  ' Saves'
+          else
+            puts 'Sorry Image ' + item.id.to_s +  ' did not Saves :('
+          end
+        end
       end
     end
   end
