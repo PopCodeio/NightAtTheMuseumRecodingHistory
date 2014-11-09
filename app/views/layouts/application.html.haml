@@ -29,11 +29,9 @@
                 %span Miami
           #navbar-collapse.collapse.navbar-collapse.pull-right
             - if current_user
-              = current_user.name
-              = current_user.badges.count
-              %ul
-                - current_user.badges.each do |b|
-                  %li= b.name
+              %h1{style: 'text-align:center;'}= current_user.name + '(' + current_user.badges.count.to_s + ')'
+              - current_user.badges.each do |b|
+                = image_tag 'badges/' + b.name + '.png'
 
       %nav.navbar.navbar-default{:role => "navigation"}
         .container
