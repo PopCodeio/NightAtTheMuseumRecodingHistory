@@ -1,6 +1,6 @@
 class ItemsController < PublicController
 
-  expose(:items){ Item.limit(10) }
+  expose(:items){ Item.all }
   expose(:item)
   def index
     respond_to do |format|
