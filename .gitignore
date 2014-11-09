@@ -17,6 +17,7 @@ public/system/
 public/uploads/
 tmp/
 design/
+public/pictures/
 
 # Windows image file caches
 Thumbs.db
