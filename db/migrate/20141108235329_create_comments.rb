@@ -7,7 +7,7 @@ class CreateComments < ActiveRecord::Migration
 
       t.boolean :deleted, default: false
       t.integer :deleted_by
-      t.datetime :deleted_att, default: false
+      t.datetime :deleted_at
       t.timestamps
     end
   end

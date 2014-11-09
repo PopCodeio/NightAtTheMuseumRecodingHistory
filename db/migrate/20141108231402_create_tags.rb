@@ -4,7 +4,7 @@ class CreateTags < ActiveRecord::Migration
       t.string :name
       t.boolean :deleted, default: false
       t.integer :deleted_by
-      t.datetime :deleted_at, default: false
+      t.datetime :deleted_at
       t.timestamps
     end
   end
