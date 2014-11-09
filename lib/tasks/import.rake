@@ -56,17 +56,17 @@ namespace :pull do
         end
 
         if doc.at_css('img.digcontentfile')
-          image_id = doc.at_css('img.digcontentfile')['src'].split('&')[1].split('=').last
-          File.open('public/pictures/' + image_id + '.jpg', 'wb') do |fo|
+          #image_id = doc.at_css('img.digcontentfile')['src'].split('&')[1].split('=').last
+          #File.open('public/pictures/' + image_id + '.jpg', 'wb') do |fo|
             picture = base + doc.at_css('img.digcontentfile')['src']
-            fo.write open(picture).read
+           #fo.write open(picture).read
 
-            image = 'public/pictures/' + image_id + '.jpg'
-            photo = MiniExiftool.new image
-            photo.title       = item[:title] || ''
-            photo.description = item[:description] || ''
-            photo.save
-          end
+           #image = 'public/pictures/' + image_id + '.jpg'
+           #photo = MiniExiftool.new image
+           #photo.title       = item[:title] || ''
+           #photo.description = item[:description] || ''
+           #photo.save
+          #end
         end
 
         #item.remote_picture_url = picture + '&id=' + num.to_s
@@ -79,9 +79,10 @@ namespace :pull do
             puts e
           end
         else
-          src = File.join(Rails.root, "/public/pictures/" + image_id + ".jpg")
-          src_file = File.new(src)
-          item.picture = src_file
+          #src = File.join(Rails.root, "/public/pictures/" + image_id + ".jpg")
+          #src_file = File.new(src)
+          #item.picture = src_file
+          item.remote_picture_url = picture
           if item.save
             puts 'Image ' + item.id.to_s +  ' Saves'
           else
