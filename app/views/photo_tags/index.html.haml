@@ -20,9 +20,9 @@
         - else
           = image_tag item.picture_url, class:'img-thumbnail'
     .row
-
-      .form-group
-        = form_tag :photo_tags, method: 'puts', id:'playform' do
-          #tags
-          = hidden_field_tag :item, item.id
-          = submit_tag 'submit'
+      - if current_user
+        .form-group
+          = form_tag :photo_tags, method: 'puts', id:'playform' do
+            #tags
+            = hidden_field_tag :item, item.id
+            = submit_tag 'submit'
