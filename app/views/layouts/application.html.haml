@@ -54,15 +54,19 @@
       .container
         .row
           .col-lg-4
-            %p#footer_address
-            HistoryMiami
-            101 West Flagler Street
-            Miami, FL 33130
-            %p#footer_contact
-            305-375-1492
-            %a{:href => "mailto:e.info@historymiami.org"} e.info@historymiami.org
-          .col-lg-4
-            %p.text-center Social Media
+            %address
+              %strong HistoryMiami
+              %br
+              101 West Flagler Street
+              %br
+              Miami, FL 33130
+              %br
+              305-375-1492
+              %br
+              %a{:href => "mailto:e.info@historymiami.org"} e.info@historymiami.org
+          .col-lg-4.hidden-xs
+            %p
+              %strong Social Media
             %a{:href => "http://www.facebook.com/historymiami360", :target => "blank"}
               %img{:alt => "HistoryMiami on Facebook", :src => "http://www.historymiami.org/images/facebook.png"}/
             %a{:href => "http://www.twitter.com/historymiami", :target => "blank"}
@@ -75,19 +79,21 @@
               %img{:alt => "HistoryMiami on Foursquare", :src => "http://www.historymiami.org/images/foursquare.png"}/
             %a{:href => "http://www.tripadvisor.com/Attraction_Review-g34438-d592101-Reviews-HistoryMiami-Miami_Florida.html", :target => "_blank"}
               %img{:alt => "HistoryMiami on Trip Advisor", :src => "http://www.historymiami.org/images/trip-advisor.jpg"}/
-          .col-lg-4
+          .col-lg-4.hidden-xs
             #footer_smithsonian
-            %span Smithsonian Institution Affiliations Program
-          #footer_row
-            %p#footer_copyright ©HistoryMiami. All rights reserved.
-            %ul#footer_nav
-              %li
-                %a{:href => "http://www.historymiami.org/sitemap/"} Sitemap
-              %li
-                %a{:href => "http://www.historymiami.org/about-us/press-room/"} Press Room
-              %li
-                %a{:href => "http://www.historymiami.org/sign-up-for-news/", :target => "_blank"} Sign Up For News
-              %li
-                %a{:href => "http://www.historymiami.org/about-us/contact-us/"} Contact Us
+            %img{ src: 'http://www.historymiami.org/images/logo_smithsonian.png', height: '48px'}
+        .row.hidden-xs
+          .col-lg-12
+            .hm-footer
+              %p#footer_copyright ©HistoryMiami. All rights reserved.
+              %ol.hm-breadcrumb.pull-right
+                %li
+                  %a{:href => "http://www.historymiami.org/sitemap/"} Sitemap
+                %li
+                  %a{:href => "http://www.historymiami.org/about-us/press-room/"} Press Room
+                %li
+                  %a{:href => "http://www.historymiami.org/sign-up-for-news/", :target => "_blank"} Sign Up For News
+                %li
+                  %a{:href => "http://www.historymiami.org/about-us/contact-us/"} Contact Us
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
