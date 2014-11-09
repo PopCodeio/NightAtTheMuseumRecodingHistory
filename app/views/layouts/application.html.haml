@@ -49,9 +49,9 @@
           = link_to 'Chronicle', root_path, class: 'navbar-brand'
         #navbar-collapse.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to 'Play Tag', photo_tags_path
             - if current_user
+              %li
+                = link_to 'Play Tag', photo_tags_path
               %li
                 = link_to t(:log_out).titleize, destroy_user_session_path, :method => :delete
             - else
