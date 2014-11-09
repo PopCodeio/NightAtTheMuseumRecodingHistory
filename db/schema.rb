@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141108235329) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
-    t.integer  "item"
+    t.integer  "item_id"
     t.text     "comment"
     t.boolean  "deleted",     default: false
     t.integer  "deleted_by"

@@ -6,41 +6,42 @@
           %img{src:'http://placehold.it/500x300', class:'img-thumbnail'}
         - else
           = image_tag item.picture_url, class:'img-thumbnail'
-      .col-md-8.pull-right.digcontentmetadata
-        %strong Title:
-        = item.title
-        %br
-        %strong Date:
-        = item.date
-        %br
-        %strong Description:
-        = item.description
-        %br
-        %strong Id:
-        = item.source_id
-        %br
-        %strong Source:
-        = item.source
-        %br
-        %strong Found:
-        = item.found
-        %br
-        %strong Creator:
-        = item.creator
-        %br
-        %strong Subject:
-        = item.subject
-        %br
-        %strong Rights:
-        = item.rights
-    .row
-      %h2
-        Tags
-      .tagsinput
-        - item.tags.uniq.each do |t|
-          %span.tag
-            = t.name + ' : '
-            = t.tag_count(item: item.id).to_s 
+      .row
+        .col-md-8.pull-right.digcontentmetadata
+          %strong Title:
+          = item.title
+          %br
+          %strong Date:
+          = item.date
+          %br
+          %strong Description:
+          = item.description
+          %br
+          %strong Id:
+          = item.source_id
+          %br
+          %strong Source:
+          = item.source
+          %br
+          %strong Found:
+          = item.found
+          %br
+          %strong Creator:
+          = item.creator
+          %br
+          %strong Subject:
+          = item.subject
+          %br
+          %strong Rights:
+          = item.rights
+        .col-md-8.pull-right
+          %h3
+            Tags
+          .tagsinput
+            - item.tags.uniq.each do |t|
+              %span.tag
+                = t.name + ' : '
+                = t.tag_count(item: item.id).to_s 
     .row
       - if current_user
         .form-group
@@ -49,6 +50,27 @@
             = hidden_field_tag :item, item.id
             = hidden_field_tag :from_page, 'items'
             = submit_tag 'submit'
+    .row.img-thumbnail
+      - comments.each do |c|
+        .media
+          %a.media-left{:href => "#"}
+            = image_tag ['avatars/avatar_10937.jpg', 'avatars/avatar_11212.jpg', 'avatars/paigecopy.jpg', 'avatars/SonictheHedgehog4276.gif'].sample
+          .media-body
+            %h4.media-heading
+              = ['Aldo', 'Moe', 'Chris', 'Marci', 'Mari', 'Rebecca'].sample
+            .block= c.comment
+            %br
+            .small.pull-left= c.created_at.strftime('%D')
+      %br
+      - if current_user
+        .form-group
+          = form_tag :comments, method: 'puts' do
+            = text_area_tag :comment, nil, class: 'form-control', rows: 3
+            = hidden_field_tag :item, item.id
+            = hidden_field_tag :from_page, 'items'
+            %br
+            = submit_tag 'submit', class: 'btn btn-primary pull-right'
+            %br
 :css
   div.tagsinput { border:1px solid #CCC; background: #FFF; padding:5px; width:300px; height:100px; overflow-y: auto;}
   div.tagsinput span.tag { border: 1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; display: block; float: left; padding: 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
@@ -58,12 +80,14 @@
   .tags_clear { clear: both; width: 100%; height: 0px; }
   .not_valid {background: #FBD8DB !important; color: #90111A !important;}
   .digcontentmetadata {
+    border-radius: 5px;
     border:1px solid #ddd;
     padding:1em;
-    background:#e9e3db url('images/contentsgradient.gif') repeat-x top left;
+    background:#e9e3db;
     float:left;
     margin-bottom:2em;
     margin-left:.5em;
     width:65%;
+    height: 100%;
     line-height:1.25em;
   }

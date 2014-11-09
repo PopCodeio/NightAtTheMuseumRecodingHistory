@@ -1,6 +1,7 @@
 class ItemsController < PublicController
   expose(:items){ Item.all }
   expose(:item)
+  expose(:comments){ item.comments }
 
   def index
     respond_to do |format|
