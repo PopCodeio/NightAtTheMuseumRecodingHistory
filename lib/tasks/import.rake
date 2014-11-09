@@ -10,8 +10,8 @@ namespace :pull do
     target = '?p=digitallibrary/digitalcontent'
 
     1..1000.times do |t|
-      num = t+1
-      #num = t+520
+      #num = t+1
+      num = t+124
 
       doc = Nokogiri::HTML(open(base + target +'&id='+ num.to_s))
       puts base + target  +'&id='+ num.to_s
