@@ -24,5 +24,5 @@
       .form-group
         = form_tag :photo_tags, method: 'puts', id:'playform' do
           #tags
-          = hidden_field_tag :item, 1
+          = hidden_field_tag :item, item.id
           = submit_tag 'submit'

@@ -1,11 +1,38 @@
 #phototag
   .container
     .row
-      .text-center
+      .pull-left
         - if item.picture_url.to_s.empty? 
           %img{src:'http://placehold.it/500x300', class:'img-thumbnail'}
         - else
           = image_tag item.picture_url, class:'img-thumbnail'
+      .pull-right
+        %strong Title:
+        = item.title
+        %br
+        %strong Date:
+        = item.date
+        %br
+        %strong Description:
+        = item.description
+        %br
+        %strong Source_id:
+        = item.source_id
+        %br
+        %strong Source:
+        = item.source
+        %br
+        %strong Found:
+        = item.found
+        %br
+        %strong Creator:
+        = item.creator
+        %br
+        %strong Subject:
+        = item.subject
+        %br
+        %strong Rights:
+        = item.rights
     .row
 
       .form-group
