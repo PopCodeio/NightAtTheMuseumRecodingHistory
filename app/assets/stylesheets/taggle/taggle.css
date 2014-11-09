@@ -364,9 +364,12 @@ p a:hover {
 /* line 317, ../../../sass/projects/taggle/taggle.scss */
 .taggle_placeholder {
   position: absolute;
-  color: #CCC;
+  color: #000;
+  margin: 5px;
+  /*
   top: 12px;
   left: 8px;
+  */
   -webkit-transition: opacity, 0.25s;
   -moz-transition: opacity, 0.25s;
   -o-transition: opacity, 0.25s;
