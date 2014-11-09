@@ -9,6 +9,40 @@ class CommentsController < PublicController
     comment.comment = params[:comment]
     if comment.save
       flash[:notice] = t(:comment_created)
+
+      if current_user.comments.count > 1
+        add_badge = true
+        current_user.badges.each do |b|
+          if b.id == 6
+            add_badge = false
+          end
+        end
+        if add_badge
+          current_user.add_badge(6)
+        end
+      end
+      if current_user.comments.count > 5
+        add_badge = true
+        current_user.badges.each do |b|
+          if b.id == 7
+            add_badge = false
+          end
+        end
+        if add_badge
+          current_user.add_badge(7)
+        end
+      end
+      if current_user.comments.count > 10
+        add_badge = true
+        current_user.badges.each do |b|
+          if b.id == 8
+            add_badge = false
+          end
+        end
+        if add_badge
+          current_user.add_badge(8)
+        end
+      end
       redirect_to item_path(params[:item])
     else
       render :new
