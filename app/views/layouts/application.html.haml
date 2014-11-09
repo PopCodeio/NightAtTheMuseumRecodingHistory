@@ -15,7 +15,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %nav.navbar.navbar-default{:role => "navigation"}
+    %nav.navbar.navbar-history{:role => "navigation"}
       .container
         .navbar-header
           %button.navbar-toggle.collapsed{"data-target" => "#navbar-collapse", "data-toggle" => "collapse", :type => "button"}
@@ -23,37 +23,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to 'Chronicles', root_path, class: 'navbar-brand'
+          = link_to root_path do
+            .historymiamilogo
+              History
+              %span Miami
+            
         #navbar-collapse.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li.active
-              %a{:href => "#"} Link
-            %li
-              %a{:href => "#"} Link
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Dropdown
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "#"} Action
-                %li
-                  %a{:href => "#"} Another action
-                %li
-                  %a{:href => "#"} Something else here
-                %li.divider
-                %li
-                  %a{:href => "gs#"} Separated link
-                %li.divider
-                %li
-                  %a{:href => "#"} One more separated link
-          %form.navbar-form.navbar-left{:role => "search"}
-            .form-group
-              %input.form-control{:placeholder => "Search", :type => "text"}/
-            %button.btn.btn-default{:type => "submit"} Submit
           %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{:href => "#"} Link
             - if current_user
               %li
                 = link_to t(:log_out).titleize, destroy_user_session_path, :method => :delete
@@ -62,4 +38,25 @@
                 = link_to t(:log_in).titleize, new_user_session_path
               %li
                 = link_to t(:registration).titleize, new_user_registration_path
+    %nav.navbar.navbar-default{:role => "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-target" => "#navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'Chronicle', root_path, class: 'navbar-brand'
+        #navbar-collapse.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to 'Play Tag', photo_tags_path
+            - if current_user
+              %li
+                = link_to t(:log_out).titleize, destroy_user_session_path, :method => :delete
+            - else
+              %li
+                = link_to t(:log_in).titleize, new_user_session_path
+              %li
+                = link_to t(:registration).titleize, new_user_registration_path        
     = yield

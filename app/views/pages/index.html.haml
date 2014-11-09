@@ -1,6 +1,7 @@
 #home
 .lead A Link to the past
-= current_user.badges
+- if current_user
+  = current_user.badges
 #timeline-embed
 :javascript
   var timeline_config = {

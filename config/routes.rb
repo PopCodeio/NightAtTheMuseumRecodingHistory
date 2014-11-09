@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'phototag/index'
-
   devise_for :users, :controllers => {
     registrations: 'users/registrations',
     :sessions => "users/sessions",
@@ -13,6 +11,7 @@ Rails.application.routes.draw do
   end
   match 'ping'         => 'pages#ping',           as: :ping, via: :all
 
+  resources :photo_tags
   resources :items
   root 'pages#index'
 end
