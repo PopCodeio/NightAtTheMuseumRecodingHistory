@@ -1,0 +1,10 @@
+#profile-show
+  .container.vh
+    - if user
+      .text-center
+        = user.photo
+        %h1{style: 'text-align:center;'}= user.name 
+      - user.badges.each do |b|
+        = image_tag 'badges/' + b.name + '.png'
+
+    

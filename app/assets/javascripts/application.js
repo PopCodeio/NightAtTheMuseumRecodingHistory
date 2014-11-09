@@ -20,5 +20,5 @@ Turbolinks.enableProgressBar();
 
 $(document).on('ready page:load', function(){
     console.log('ready');
-        tags = new Taggle('tags');
+    tags = new Taggle('tags');
 })

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
   authenticate :user do
     namespace :users do
-      resources :profile, :only => [:edit, :update]
+      resources :profile, :only => [:edit, :update, :show]
     end
   end
   resources :photo_tags
