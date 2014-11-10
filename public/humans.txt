@@ -1,0 +1,23 @@
+/~* INTRO */
+People who do great work sign there code.
+I put this file here so that future developers who work on this codebase know we tried to do that.
+Feel free to edit this file if you work on this codebase and add any missing details in.
+
+
+/* AWESOME DEVELOPMENT TEAM */
+
+  CURRENT:
+
+
+  Senior Rails Lead Developer: Aldo Delgado ("PopCode")
+  From: PSN Miami Lakes
+  In appreciation for all of Aldo’s work over the last few months, I am putting in an outstanding review for him. He has gone out of his way to be here anytime I needed him even though that has meant working night after night to accomplish our goals even when that sometimes missing his important family functions. Aldo’s has surpassed my expectations by delivering on the complex work of integrating the sports data into our application and took part in creating key features of our app…namely the player picks process, which required him to step up to the plate and learn a new programming language - coffeescript in a couple of days, making it two languages he was forced to pick up for this project. He is always my goto for helping with database design, especially with regards to normalizing, what we needed to implement the game, importing player images to amazon ec2, and writing the initial contest closeout process. As frustrating as the sports data api was due to tons of inconsistencies in the data from sport to sport… He persisted and never gave up. He has been a wealth of sports information, dealing with any sports related knowledge our team required. I am honored to have the privilege of working with him and appreciate all he has done. We could not have gotten this far so quickly without him.
+
+  Senior Rails Developer: Moises Zaragoza ("PopCode")
+  From: Coconut Creeck
+  What can I say except.. Moises has over delivered on everything I have asked of him. He has added extra features when he could and somehow managed to keep our test suite passing.  He has come to know what I am looking for and takes criticism with patience. He has been the major force in the implementation of the user screens, authentication process, oauth integration, emails, notifications, job queueing, accounting/transaction process and real time push. On the authentication process Moe worked to ensure the testing around the social logins where correctly implemented which is one of the hardest thing to do in rails. Also because we did not have any proper designs during most of the process this required him to do more then a reasonable workload for any programmer as he was forced to deal with the initial css styles and layouts and then rewrite the process to support all the new layouts… Never once did Moe complain….  I am honored to be working with him and appreciate him greatly.
+
+
+
+  Senior Coffee/SASS/ Designer: Chris Scott
+  From: South Florida
