@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141109164417) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
     t.integer  "sash_id"
@@ -20,34 +23,34 @@ ActiveRecord::Schema.define(version: 20141109164417) do
     t.datetime "created_at"
   end
 
-  add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id"
-  add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id"
-  add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id"
+  add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id", using: :btree
+  add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id", using: :btree
+  add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.integer  "item_id"
     t.text     "comment"
-    t.boolean  "deleted",     default: false
+    t.boolean  "deleted",    default: false
     t.integer  "deleted_by"
-    t.datetime "deleted_att"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "items", force: true do |t|
-    t.integer  "source_db_id",               default: 0,  null: false
-    t.string   "title",                      default: "", null: false
-    t.string   "date",                       default: "", null: false
+    t.integer  "source_db_id",   default: 0,  null: false
+    t.string   "title",          default: "", null: false
+    t.string   "date",           default: "", null: false
     t.date     "source_date"
-    t.text     "description",    limit: 255, default: "", null: false
-    t.string   "source_id",                  default: "", null: false
-    t.string   "source",                     default: "", null: false
-    t.string   "found",                      default: "", null: false
-    t.string   "creator",                    default: "", null: false
-    t.string   "subject",                    default: "", null: false
-    t.string   "rights",                     default: "", null: false
-    t.string   "picture",                    default: "", null: false
+    t.text     "description",    default: "", null: false
+    t.string   "source_id",      default: "", null: false
+    t.string   "source",         default: "", null: false
+    t.string   "found",          default: "", null: false
+    t.string   "creator",        default: "", null: false
+    t.string   "subject",        default: "", null: false
+    t.string   "rights",         default: "", null: false
+    t.string   "picture",        default: "", null: false
     t.datetime "time_line_date"
     t.text     "params"
     t.datetime "created_at"
@@ -94,9 +97,9 @@ ActiveRecord::Schema.define(version: 20141109164417) do
 
   create_table "tags", force: true do |t|
     t.string   "name"
-    t.boolean  "deleted",     default: false
+    t.boolean  "deleted",    default: false
     t.integer  "deleted_by"
-    t.datetime "deleted_att"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -105,9 +108,9 @@ ActiveRecord::Schema.define(version: 20141109164417) do
     t.integer  "user_id"
     t.integer  "tag_id"
     t.integer  "item_id"
-    t.boolean  "deleted",     default: false
+    t.boolean  "deleted",    default: false
     t.integer  "deleted_by"
-    t.datetime "deleted_att"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -150,9 +153,9 @@ ActiveRecord::Schema.define(version: 20141109164417) do
     t.integer  "level",                  default: 0
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
 end

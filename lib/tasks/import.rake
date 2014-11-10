@@ -4,7 +4,7 @@ require 'net/http'
 require 'open-uri'
 require 'date'
 namespace :pull do
-  desc 'test'
+  desc 'Pull assets from History Miami'
   task :images => :environment do
     base = 'http://historymiamiarchives.org/guides/'
     target = '?p=digitallibrary/digitalcontent'
@@ -69,11 +69,11 @@ namespace :pull do
           #end
         end
 
-        #item.remote_picture_url = picture + '&id=' + num.to_s
-        #item.remote_picture_url = "http://127.0.0.1:3000/pictures/" + num.to_s + ".jpg"
-        # item.remote_picture_path = "#{Rails.root}/public/pictures/" + num.to_s + ".jpg"
-        #item[:picture]          = num.to_s + '.jpg'
-        item[:params]           = doc.css('div.digcontentdata').to_json
+        #item.remote_picture_url    = picture + '&id=' + num.to_s
+        #item.remote_picture_url    = "http://127.0.0.1:3000/pictures/" + num.to_s + ".jpg"
+        # item.remote_picture_path  = "#{Rails.root}/public/pictures/" + num.to_s + ".jpg"
+        #item[:picture]             = num.to_s + '.jpg'
+        item[:params]               = doc.css('div.digcontentdata').to_json
         unless item.save
           item.errors.each do |e|
             puts e

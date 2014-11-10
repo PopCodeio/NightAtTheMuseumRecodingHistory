@@ -5,7 +5,7 @@ class CreateItem < ActiveRecord::Migration
       t.string   :title, null: false, default: ""
       t.string   :date, null: false, default: ""
       t.date     :source_date
-      t.string   :description, null: false, default: ""
+      t.text   :description, null: false, default: ""
       t.string   :source_id, null: false, default: ""
       t.string   :source, null: false, default: ""
       t.string   :found, null: false, default: ""
