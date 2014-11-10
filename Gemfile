@@ -7,7 +7,7 @@ gem 'devise' # User Authentication
 gem 'thin' # Use Thin as Server
 gem 'tzinfo-data', platforms: [:mingw, :mswin] # Rails Core Windows Dependency, Provides Time Zone Info
 
-#tools
+# Tools
 gem 'active_model_serializers'
 gem 'awesome_print'
 gem 'browser'
@@ -20,8 +20,9 @@ gem 'anemone'
 gem 'nokogiri'
 gem 'simple_form'
 gem 'merit'
+gem 'spinner.rb'
 
-# image
+# Image
 gem 'fog', "~> 1.3.1"
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
@@ -62,12 +63,9 @@ end
 
 ## Views and Assets
 ####################
-
 gem 'sass-rails', '~> 4.0.0' # Use SCSS for stylesheets
 gem 'bootstrap-sass' # Pull our selves up by our Bootstraps
-# gem 'slim-rails' # Lose some weight
 gem 'haml' # Ham it up
-
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
