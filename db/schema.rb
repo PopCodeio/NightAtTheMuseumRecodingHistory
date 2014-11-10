@@ -40,16 +40,15 @@ ActiveRecord::Schema.define(version: 20141109164417) do
 
   create_table "items", force: true do |t|
     t.integer  "source_db_id",   default: 0,  null: false
-    t.string   "title",          default: "", null: false
-    t.string   "date",           default: "", null: false
-    t.date     "source_date"
-    t.text     "description",    default: "", null: false
     t.string   "source_id",      default: "", null: false
-    t.string   "source",         default: "", null: false
-    t.string   "found",          default: "", null: false
-    t.string   "creator",        default: "", null: false
-    t.string   "subject",        default: "", null: false
-    t.string   "rights",         default: "", null: false
+    t.string   "date",           default: "", null: false
+    t.text     "title",          default: "", null: false
+    t.text     "description",    default: "", null: false
+    t.text     "source",         default: "", null: false
+    t.text     "found",          default: "", null: false
+    t.text     "creator",        default: "", null: false
+    t.text     "subject",        default: "", null: false
+    t.text     "rights",         default: "", null: false
     t.string   "picture",        default: "", null: false
     t.datetime "time_line_date"
     t.text     "params"
