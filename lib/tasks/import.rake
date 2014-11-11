@@ -10,8 +10,8 @@ namespace :pull do
     target = '?p=digitallibrary/digitalcontent'
 
     1..1000.times do |t|
-      num = t+1
-      #num = t+124
+      #num = t+1
+      num = t+120
 
       doc = Nokogiri::HTML(open(base + target +'&id='+ num.to_s))
       puts base + target  +'&id='+ num.to_s
@@ -28,6 +28,7 @@ namespace :pull do
         item.creator          = doc.css('div.digcontentdata')[6].content if doc.css('div.digcontentdata')[6]
         item.subject          = doc.css('div.digcontentdata')[7].content if doc.css('div.digcontentdata')[7]
         item.rights           = doc.css('div.digcontentdata')[8].content if doc.css('div.digcontentdata')[8]
+        debugger
         begin
           item.time_line_date   = DateTime.parse(item.date)
           #puts item.time_line_date.to_s + ' YAY!!!!'
