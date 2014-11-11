@@ -10,15 +10,8 @@
             = item.subject
 
         .tagsinput
-          %span.tag
-            = link_to item_path(item.id) do
-              sample tag
-          %span.tag
-            = link_to item_path(item.id) do
-              another tag
           - item.tags.uniq.each do |t|
             %span.tag
-              test
               = t.name + ' : '
               = t.tag_count(item: item.id).to_s
       .col-md-8.col-lg-8.digcontentmetadata
@@ -104,3 +97,5 @@
     height: 100%;
     line-height:1.25em;
   }
+:javascript
+  tags = new Taggle('tags');
